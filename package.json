@@ -1,0 +1,49 @@
+{
+  "name": "reactn-devtools",
+  "version": "1.0.0",
+  "author": "Charles Stover <reactn-devtools@charlesstover.com>",
+  "description": "ReactN DevTools allow you to view your ReactN state with the Redux DevTools browser extension",
+  "homepage": "https://github.com/CharlesStover/reactn-devtools#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "github:CharlesStover/reactn-devtools",
+  "bugs": {
+    "email": "reactn-devtools@charlesstover.com",
+    "url": "https://github.com/CharlesStover/reactn-devtools/issues"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "tests"
+  },
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "yarn prepublishOnly",
+    "prepublishOnly": "tsc",
+    "test": "jest"
+  },
+  "types": "index.d.ts",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.2",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "react": "^16.8.6",
+    "reactn": "^2.0.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  },
+  "peerDependencies": {
+    "reactn": "^2.0.1",
+    "redux": "^4.0.0"
+  }
+}
