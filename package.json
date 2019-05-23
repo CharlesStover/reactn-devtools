@@ -35,7 +35,7 @@
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "react": "^16.8.6",
-    "reactn": "^2.0.1",
+    "reactn": "^2.0.2",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "ts-jest": "^24.0.2",
@@ -43,7 +43,7 @@
     "typescript": "^3.4.5"
   },
   "peerDependencies": {
-    "reactn": "^2.0.1",
+    "reactn": "^2.0.2",
     "redux": "^4.0.0"
   }
 }
