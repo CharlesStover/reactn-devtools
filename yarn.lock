@@ -2716,9 +2716,9 @@ lodash.sortby@^4.7.0:
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
 lodash@^4.17.11:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
+  integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
@@ -3360,10 +3360,10 @@ react@^16.8.6:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
-reactn@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/reactn/-/reactn-2.0.1.tgz#bc066558c5de5907a53b3dc441e8bc74ec64ca72"
-  integrity sha512-FfxjTyt9Y4ibgxMHEFmAqRAccoMcYL9xtI9cIRRWcfQ1Re/K9jbs5UdarxV2g+dEboU24CJD7lUoG9Oc0PO62w==
+reactn@^2.0.2:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/reactn/-/reactn-2.1.4.tgz#56dea6127fd094fa772b36a86ad933ceadb87999"
+  integrity sha512-RF1HR5pDVAAOhmPcZb/03l1xr/qGp2NqTyvDyOjL8OjrctjonyW46CsYlKAG26Xlo56PDhfssiDYMQ75RYyOlg==
   dependencies:
     use-force-update "^1.0.5"
 
