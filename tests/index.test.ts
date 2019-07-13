@@ -1,5 +1,5 @@
-import { ReactNProvider } from 'reactn/build/create-provider';
 import { Reducers, State } from 'reactn/default';
+import ReactNProvider from 'reactn/types/provider';
 import {
   composeWithDevTools,
   devToolsEnhancer,

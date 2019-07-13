@@ -1,8 +1,8 @@
 import { addCallback, getGlobal } from 'reactn';
-import { ReactNProvider } from 'reactn/build/create-provider';
 import { Reducers, State } from 'reactn/default';
-import Callback from 'reactn/typings/callback';
-import Dispatchers from 'reactn/typings/dispatchers';
+import Callback from 'reactn/types/callback';
+import Dispatchers from 'reactn/types/dispatchers';
+import ReactNProvider from 'reactn/types/provider';
 import {
   Action,
   compose,
