@@ -99,9 +99,11 @@ export default function addReactNDevTools<
       });
     }
     else {
+      const changedKeys = Object.keys(stateChange)
+      const changeTarget = changedKeys.length > 1 ? 'GLOBAL' : changedKeys[0].toUpperCase()
       store.dispatch({
-        stateChange,
-        type: 'STATE_CHANGE',
+          stateChange: stateChange,
+          type: `${changeTarget}_CHANGE`,
       });
     }
     return null;
