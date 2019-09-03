@@ -21,22 +21,31 @@ your default global state.
 To attach ReactN DevTools to your default global state (most common use case),
 add the following code snippet to your `src/index.js` file:
 
-```JavaScript
-import React from 'reactn';
+```javascript
 import addReactNDevTools from 'reactn-devtools';
-
 addReactNDevTools();
-
-// ...
 ```
+
+### Default Global State with Options
+
+To attach ReactN DevTools to your default global state with options, add the
+following code snippet to your `src/index.js` file:
+
+```javascript
+import addReactNDevTools from 'reactn-devtools';
+addReactNDevTools({ /* options here */ });
+```
+
+For a list of options, see
+[`redux-devtools-extension`'s Options](https://github.com/zalmoxisus/redux-devtools-extension/blob/master/docs/API/Arguments.md).
 
 ### Provider
 
 To attach ReactN DevTools to your ReactN Provider, add the following code
 snippet to the file that creates the Provider:
 
-```JavaScript
-import React, { createProvider } from 'reactn';
+```javascript
+import { createProvider } from 'reactn';
 import addReactNDevTools from 'reactn-devtools';
 
 const Provider = createProvider({
@@ -44,6 +53,23 @@ const Provider = createProvider({
 });
 
 addReactNDevTools(Provider);
-
-// ...
 ```
+
+### Provider with Options
+
+To attach ReactN DevTools to your ReactN Provider with options, add the
+following code snippet to the file that creates the Provider:
+
+```javascript
+import { createProvider } from 'reactn';
+import addReactNDevTools from 'reactn-devtools';
+
+const Provider = createProvider({
+  // ...
+});
+
+addReactNDevTools(Provider, { /* options */ });
+```
+
+For a list of options, see
+[`redux-devtools-extension`'s Options](https://github.com/zalmoxisus/redux-devtools-extension/blob/master/docs/API/Arguments.md).

@@ -10,6 +10,7 @@ import {
   Store,
   StoreEnhancer,
 } from 'redux';
+import { EnhancerOptions } from 'redux-devtools-extension';
 
 
 
@@ -28,10 +29,6 @@ interface DevToolsStateChangeAction<G, T = string> extends Action<T> {
   stateChange: Partial<G>;
 }
 
-interface EnhancerOptions {
-  name: string;
-}
-
 export interface Window {
   __REDUX_DEVTOOLS_EXTENSION__?: any;
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: (options: EnhancerOptions) =>
@@ -39,6 +36,13 @@ export interface Window {
 }
 
 
+
+const DEFAULT_REDUX_DEVTOOLS_OPTIONS: EnhancerOptions = {
+  name: 'ReactN',
+};
+
+const isOptions = <G extends {} = State, R extends {} = Reducers>(arg: EnhancerOptions | ReactNProvider<G, R>): arg is EnhancerOptions =>
+  arg !== null && !Object.prototype.hasOwnProperty.call(arg, 'global');
 
 const reducer = <G extends {} = State>(
   state: G,
@@ -48,19 +52,17 @@ const reducer = <G extends {} = State>(
   ...action.stateChange,
 });
 
-const REDUX_DEVTOOLS_OPTIONS: EnhancerOptions = {
-  name: 'ReactN',
-};
-
 declare const window: Window | void;
 
 
-
+export default function addReactNDevTools(options?: EnhancerOptions);
+export default function addReactNDevTools<G extends {} = State, R extends {} = Reducers>(Provider: ReactNProvider<G, R>, options?: EnhancerOptions);
 export default function addReactNDevTools<
   G extends {} = State,
   R extends {} = Reducers,
 >(
-  Provider: ReactNProvider<G, R> = null,
+  Provider: EnhancerOptions | ReactNProvider<G, R> = null,
+  options: EnhancerOptions = Object.create(null),
 ): BooleanFunction {
 
   if (
@@ -70,9 +72,17 @@ export default function addReactNDevTools<
     return (): boolean => true;
   }
 
+  // addReactNDevTools(options)
+  if (isOptions(Provider)) {
+    return addReactNDevTools(null, Provider);
+  }
+
   // Enhance the store with Redux DevTools.
   const storeEnhancer: StoreEnhancer =
-    window.__REDUX_DEVTOOLS_EXTENSION__(REDUX_DEVTOOLS_OPTIONS);
+    window.__REDUX_DEVTOOLS_EXTENSION__({
+      ...DEFAULT_REDUX_DEVTOOLS_OPTIONS,
+      ...options,
+    });
 
   // Create the store.
   const store: Store<G, DevToolsAction<G>> =

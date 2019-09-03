@@ -1,6 +1,6 @@
 {
   "name": "reactn-devtools",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "Charles Stover <reactn-devtools@charlesstover.com>",
   "description": "ReactN DevTools allow you to view your ReactN state with the Redux DevTools browser extension",
   "homepage": "https://github.com/CharlesStover/reactn-devtools#readme",
@@ -26,6 +26,9 @@
     "test": "jest"
   },
   "types": "index.d.ts",
+  "dependencies": {
+    "redux-devtools-extension": "^2.13.8"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
@@ -38,7 +41,6 @@
     "react": "^16.8.6",
     "reactn": "^2.1.4",
     "redux": "^4.0.1",
-    "redux-devtools-extension": "^2.13.8",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.5"

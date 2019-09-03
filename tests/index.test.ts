@@ -3,6 +3,7 @@ import ReactNProvider from 'reactn/types/provider';
 import {
   composeWithDevTools,
   devToolsEnhancer,
+  EnhancerOptions,
 } from 'redux-devtools-extension/developmentOnly';
 import addReactNDevTools, { Window } from '../src/index';
 
@@ -40,9 +41,9 @@ describe('ReactN DevTools', (): void => {
 
 
 
-  it('should be a function with 1 argument', (): void => {
+  it('should be a function with 2 arguments', (): void => {
     expect(addReactNDevTools).toBeInstanceOf(Function);
-    expect(addReactNDevTools.length).toBe(1);
+    expect(addReactNDevTools.length).toBe(2);
   });
 
   it('should return a function that returns true', (): void => {
@@ -55,5 +56,19 @@ describe('ReactN DevTools', (): void => {
   it('should call Redux DevTools extension', (): void => {
     addReactNDevTools();
     expect(global.window.__REDUX_DEVTOOLS_EXTENSION__).toBeCalledTimes(1);
+    expect(global.window.__REDUX_DEVTOOLS_EXTENSION__).toHaveBeenLastCalledWith({
+      name: 'ReactN',
+    });
+  });
+
+  it('should support options', (): void => {
+    const OPTIONS: EnhancerOptions = {
+      name: 'test name',
+      trace: true,
+    };
+    addReactNDevTools(OPTIONS);
+    expect(global.window.__REDUX_DEVTOOLS_EXTENSION__).toBeCalledTimes(1);
+    expect(global.window.__REDUX_DEVTOOLS_EXTENSION__)
+      .toHaveBeenLastCalledWith(OPTIONS);
   });
 });
