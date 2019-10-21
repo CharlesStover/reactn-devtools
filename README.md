@@ -73,3 +73,9 @@ addReactNDevTools(Provider, { /* options */ });
 
 For a list of options, see
 [`redux-devtools-extension`'s Options](https://github.com/zalmoxisus/redux-devtools-extension/blob/master/docs/API/Arguments.md).
+
+## Sponsor 💗
+
+If you are a fan of this project, you may
+[become a sponsor](https://github.com/sponsors/CharlesStover)
+via GitHub's Sponsors Program.
